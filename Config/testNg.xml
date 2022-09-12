@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Cases" verbose="1">
+
+    <test name="Verify user is log in and LogOut">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="newTest.LogInTestNew"/>
+        </classes>
+    </test>
+
+<!--    <test name="Verify user clicked on leave page">-->
+<!--        <parameter name="browserName" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="newTest."/>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>
