@@ -9,6 +9,8 @@ public class LogInTestNew extends Baseclass {
     public void start() throws InterruptedException
     {
         pageFactoryNew.getLoginPage().newLogIn();
+        pageFactoryNew.getReport().clickReport();
+        pageFactoryNew.getLoginPage().newLogOut();
     }
 
 

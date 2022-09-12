@@ -7,11 +7,4 @@
             <class name="newTest.LogInTestNew"/>
         </classes>
     </test>
-
-<!--    <test name="Verify user clicked on leave page">-->
-<!--        <parameter name="browserName" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="newTest."/>-->
-<!--        </classes>-->
-<!--    </test>-->
 </suite>
