@@ -4,10 +4,15 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import loginPageNEW.PageFactoryNew;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class Baseclass {
     static WebDriver driver;
@@ -16,11 +21,13 @@ public class Baseclass {
     @Parameters("browserName")
     @BeforeClass
 
-    public static void setup(String browserName) {
+    public static void setup(String browserName) throws MalformedURLException {
         if (browserName.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
+           ChromeOptions chromeOptions = new ChromeOptions();
             driver.manage().window().maximize();
+            WebDriver driver = new RemoteWebDriver(new URL(" http://10.20.20.80:4444/wd/hub"), chromeOptions);
             driver.get("https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F");
             pageFactoryNew = new PageFactoryNew(driver);
 
